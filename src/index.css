@@ -6,7 +6,34 @@
   font-family: "Oswald", sans-serif;
 }
 
+.header-text {
+  color: #fc3f00;
+}
+
+.text-primary {
+  color: #f79540;
+}
+
+.btn {
+  background-color: #f79540;
+}
+
+.btn:hover {
+  background-color: #fc3f00;
+}
 /* tailwind css  */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+  @apply w-3/4 mx-auto;
+}
+
+.logo {
+  @apply w-14 me-4;
+}
+
+.active {
+  @apply text-3xl font-bold underline duration-500 header-text;
+}
