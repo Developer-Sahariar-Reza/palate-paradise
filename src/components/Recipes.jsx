@@ -6,7 +6,7 @@ const Recipes = () => {
   const recipes = useLoaderData();
   return (
     <div className="md:my-40 my-96 container">
-      <div className="">
+      <div>
         {recipes.meals.map((recipe) => (
           <Recipe key={recipe.idMeal} recipe={recipe} />
         ))}
