@@ -1,7 +1,18 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+import Recipe from "./Recipe";
 
 const Recipes = () => {
-  return <div></div>;
+  const recipes = useLoaderData();
+  return (
+    <div className="md:my-40 my-96 container">
+      <div className="">
+        {recipes.meals.map((recipe) => (
+          <Recipe key={recipe.idMeal} recipe={recipe} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Recipes;

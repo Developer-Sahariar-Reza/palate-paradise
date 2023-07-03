@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./components/Root";
-import Home from "./components/Home";
 import About from "./components/About";
 import Recipes from "./components/Recipes";
 import Contact from "./components/Contact";
+import RecipeDetails from "./components/RecipeDetails";
 
 const router = createBrowserRouter([
   {
@@ -15,15 +15,21 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Recipes />,
+        loader: () =>
+          fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=fish"),
+      },
+      {
+        path: "recipe/:recipeId",
+        element: <RecipeDetails />,
+        loader: ({ params }) =>
+          fetch(
+            `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.recipeId}`
+          ),
       },
       {
         path: "about",
         element: <About />,
-      },
-      {
-        path: "recipes",
-        element: <Recipes />,
       },
       {
         path: "contact",

@@ -6,21 +6,6 @@
   font-family: "Oswald", sans-serif;
 }
 
-.header-text {
-  color: #fc3f00;
-}
-
-.text-primary {
-  color: #f79540;
-}
-
-.btn {
-  background-color: #f79540;
-}
-
-.btn:hover {
-  background-color: #fc3f00;
-}
 /* tailwind css  */
 @tailwind base;
 @tailwind components;
@@ -36,4 +21,36 @@
 
 .active {
   @apply text-3xl font-bold underline duration-500 header-text;
+}
+
+.header-text {
+  @apply text-[#fc3f00];
+}
+
+.text-primary {
+  @apply text-[#f79540];
+}
+
+.btn {
+  @apply bg-[#fc3f00] hover:bg-[#f79540];
+}
+
+.card-box {
+  @apply border-2 rounded-md p-4 mb-8 grid grid-cols-2 gap-5;
+}
+
+.card-img {
+  @apply w-64 rounded-md;
+}
+
+.food-name {
+  @apply text-3xl mb-6 font-bold header-text;
+}
+
+.food-category {
+  @apply text-primary text-xl font-semibold mb-4;
+}
+
+.food-area {
+  @apply text-primary text-lg font-semibold mb-3;
 }

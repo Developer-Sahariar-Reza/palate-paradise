@@ -7,7 +7,7 @@ import { Bars4Icon, XMarkIcon } from "@heroicons/react/24/solid";
 const Header = () => {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="w-full fixed top-0 left-0">
+    <nav className="w-full absolute top-0 left-0">
       <div className="md:flex items-center justify-between py-8 md:px-10 px-7">
         <div>
           <Link to="/" className="font-bold text-3xl flex items-center">
@@ -33,16 +33,6 @@ const Header = () => {
           <li className="md:me-8 md:my-0 my-5">
             <NavLink
               to="/"
-              className={({ isActive }) =>
-                isActive ? "active" : "text-3xl font-bold text-primary"
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li className="md:me-8 md:my-0 my-5">
-            <NavLink
-              to="/recipes"
               className={({ isActive }) =>
                 isActive ? "active" : "text-3xl font-bold text-primary"
               }
